@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Médicos</h2>
+    <a href="{% url 'medic_form' %}">Crear Nuevo Médico</a>
+    <ul>
+    {% for medico in object_list %}
+        <li>
+            <!-- Y agrega el hospital en el que trabaja -->
+            Dr. {{ medico.nombre }} {{ medico.apellido }} - {{ medico.email }} - {{ medico.telefono }} - {{ medico.hospital }}
+            <a href="{% url 'medic_delete' medico.id %}">Borrar</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

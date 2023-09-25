@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Hospitales</h2>
+    <a href="{% url 'hospital_form' %}">Crear Nuevo Hospital</a>
+    <ul>
+    {% for hospital in object_list %}
+        <li>
+            {{ hospital.nombre }} - {{ hospital.direccion }} - {{ hospital.telefono }} - {{ hospital.email }}
+            <a href="{% url 'hospital_delete' hospital.id %}">Borrar</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

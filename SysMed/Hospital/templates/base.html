@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Django</title>
+    
+    <!-- Incluimos Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #343a40;
+            padding: 10px 0;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0 20px;
+            font-size: 1.5em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="container-fluid">
+    <h1>Mi Proyecto Django</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'hospital_list' %}">Hospitales</a></li>
+            <li><a href="{% url 'medic_list' %}">Doctores</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container mt-5">
+    
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="container-fluid">
+    <p>Desarrollado por: Gustavo, Dillan y Juan Manuel</p>
+    <p>© 2023 Mi Proyecto Django</p>
+</footer>
+
+<!-- Opcional: Incluir Bootstrap JS y sus dependencias (jQuery y Popper.js) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
